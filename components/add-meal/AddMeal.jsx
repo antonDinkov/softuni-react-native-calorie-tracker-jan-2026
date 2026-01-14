@@ -1,5 +1,6 @@
 import { Modal, Text, TextInput, View, StyleSheet, Keyboard } from "react-native";
 import Button from "../common/Button";
+import uuid from 'react-native-uuid';
 import { useState } from "react";
 
 export default function AddMeal({
@@ -12,7 +13,11 @@ export default function AddMeal({
 
     const addPressHandler = () => {
         // Create new meal object
-        const newMeal = { name, calories: Number(calories) };
+        const newMeal = {
+            id: uuid.v4(),
+            name,
+            calories: Number(calories)
+        };
 
         // Submit new meal to parent
         onCreate(newMeal);

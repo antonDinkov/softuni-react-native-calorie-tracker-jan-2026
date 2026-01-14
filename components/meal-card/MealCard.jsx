@@ -1,13 +1,19 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableHighlight } from "react-native";
+import { Delete } from 'lucide-react-native'
 
 export default function MealCard({
+    id,
     name,
     calories,
+    onDelete
 }) {
     return (
         <View style={styles.container}>
             <Text>{name}</Text>
             <Text>{calories} cal</Text>
+            <TouchableHighlight onPress={() => onDelete(id)}>
+                <Delete />
+            </TouchableHighlight>
         </View>
     );
 }
