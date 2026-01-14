@@ -37,9 +37,5 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 26,
         fontWeight: 'bold'
-    },
-    mealSection: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
     }
 });
